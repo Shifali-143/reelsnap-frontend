@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ─────────────────────────────────────────────── -->
+  <title>ReelSnap — Free Instagram Reels Downloader, No Watermark</title>
+  <meta name="description"
+    content="Download Instagram Reels, Stories and Audio free online. No watermark, no login, no app needed. Works on Android, iPhone, and PC. HD quality." />
+  <meta name="keywords"
+    content="instagram reel downloader, download instagram video, instagram story downloader, instagram audio downloader, save instagram reel, no watermark, free" />
+  <meta name="author" content="ReelSnap" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://reelsnap.vercel.app/" />
+
+  <!-- ── Open Graph ───────────────────────────────────────── -->
+  <meta property="og:title"       content="ReelSnap — Free Instagram Reels Downloader" />
+  <meta property="og:description" content="Download Instagram Reels, Stories & Audio free. No watermark. No login." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://reelsnap.vercel.app/" />
+
+  <!-- ── Fonts ────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Styles ───────────────────────────────────────────── -->
+  <link rel="stylesheet" href="src/styles.css" />
+
+  <!-- ── Runtime env (must be first JS) ──────────────────── -->
+  <script src="env.js"></script>
+
+  <!-- ── Prevent flash of wrong theme ────────────────────── -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem("reelsnap_theme");
+        if (saved) document.documentElement.setAttribute("data-theme", saved);
+      } catch(e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="sr-only sr-only--focusable">Skip to main content</a>
+
+  <!-- ── App Shell ──────────────────────────────────────── -->
+  <div id="app-navbar"></div>
+
+  <main id="main-content">
+    <!-- Hero + download form -->
+    <div id="app-hero"></div>
+
+    <!-- Result (loading / success / error) -->
+    <div id="app-result" aria-live="polite"></div>
+
+    <!-- How to use -->
+    <div id="app-howto"></div>
+
+    <!-- FAQ -->
+    <div id="app-faq"></div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <!-- ── App Entry ──────────────────────────────────────── -->
+  <script type="module" src="src/app.js"></script>
+
+  <!-- ── Accessibility helpers ─────────────────────────── -->
+  <style>
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    .sr-only--focusable:focus {
+      position: static; width: auto; height: auto;
+      clip: auto; white-space: normal;
+    }
+  </style>
+</body>
+</html>
